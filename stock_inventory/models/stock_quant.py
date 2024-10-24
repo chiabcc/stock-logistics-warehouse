@@ -41,7 +41,6 @@ class StockQuant(models.Model):
             if len(moves) == 0:
                 raise ValueError(_("No move lines have been created"))
             move = moves[len(moves) - 1]
-            adjustment.stock_move_ids |= move
             reference = move.reference
             if adjustment.name and move.reference:
                 reference = adjustment.name + ": " + move.reference
